@@ -1,3 +1,8 @@
+package sabr.pieces;
+
+import sabr.Color;
+import sabr.Coordinates;
+
 abstract public class Piece {
     final Color color;
     public Coordinates coordinates;

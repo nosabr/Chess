@@ -1,3 +1,8 @@
+package sabr;
+
+import sabr.pieces.Pawn;
+import sabr.pieces.Piece;
+
 import java.util.HashMap;
 
 public class Board {
