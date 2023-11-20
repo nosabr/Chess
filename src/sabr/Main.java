@@ -4,6 +4,12 @@ package sabr;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        Board board = new Board();
+        board.setupDefaultPiecesPosition();
 
+        BoardConsoleRenderer renderer = new BoardConsoleRenderer();
+        renderer.render(board);
+
+        int a = 123;
     }
 }
