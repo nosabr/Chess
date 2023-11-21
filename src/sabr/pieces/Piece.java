@@ -4,7 +4,7 @@ import sabr.Color;
 import sabr.Coordinates;
 
 abstract public class Piece {
-    final Color color;
+    public final Color color;
     public Coordinates coordinates;
 
     public Piece(Color color, Coordinates coordinates) {

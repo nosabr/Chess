@@ -13,6 +13,13 @@ public class Board {
         pieces.put(coordinates,piece);
     }
 
+    public boolean isSquareEmpty(Coordinates coordinates){
+        return !pieces.containsKey(coordinates);
+    }
+    public Piece getPiece(Coordinates coordinates){
+        return pieces.get(coordinates);
+    }
+
     public void setupDefaultPiecesPosition(){
         for (File file : File.values()){
             setPiece(new Coordinates(file, 2), new Pawn(Color.WHITE, new Coordinates(file, 2)));
