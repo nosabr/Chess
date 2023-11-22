@@ -29,11 +29,6 @@ public class BoardConsoleRenderer {
         }
     }
 
-    private String getPieceSprite(Piece piece) {
-        return colorizeSprite(" A ", piece.color, Board.isSquareDark(piece.coordinates));
-
-    }
-
     private String colorizeSprite(String sprite, Color pieceColor, boolean isSquareDark){
         // format = background color + font color = text
         String result = sprite;
@@ -48,6 +43,32 @@ public class BoardConsoleRenderer {
             result = ANSI_WHITE_SQUARE_BACKGROUND + result;
         }
         return result;
+    }
+
+    private String selectUnicodeSpriteForPiece(Piece piece){
+        switch (piece.getClass().getSimpleName()){
+            case "Pawn":
+                return "P";
+
+            case "Knight":
+                return "K";
+
+            case "Bishop":
+                return "B";
+
+            case "Rook":
+                return "R";
+
+            case "Queen":
+                return "Q";
+
+            case "King":
+                return "L";
+        }
+        return "";
+    }
+    private String getPieceSprite(Piece piece) {
+        return colorizeSprite(" " + selectUnicodeSpriteForPiece(piece) + " ", piece.color, Board.isSquareDark(piece.coordinates));
     }
 
     private String getSpriteForEmptySquare(Coordinates coordinates){
