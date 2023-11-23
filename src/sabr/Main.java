@@ -10,6 +10,5 @@ public class Main {
         BoardConsoleRenderer renderer = new BoardConsoleRenderer();
         renderer.render(board);
 
-        int a = 123;
     }
 }
