@@ -22,15 +22,16 @@ abstract public class Piece {
         for (CoordinatesShift shift : getPieceMoves()) {
             if (coordinates.canShift(shift)){
                 Coordinates newCoordinates = coordinates.shift(shift);
+
                 if (isSquareAvailableForMove(newCoordinates, board)){
                     result.add(newCoordinates);
                 }
             }
         }
+        return result;
     }
 
-    private boolean isSquareAvailableForMove(Coordinates newCoordinates, Board board) {
-
+    private boolean isSquareAvailableForMove(Coordinates coordinates, Board board) {
         return board.isSquareEmpty(coordinates) || board.getPiece(coordinates).color != color;
     }
 

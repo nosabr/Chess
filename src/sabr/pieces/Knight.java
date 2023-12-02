@@ -3,6 +3,8 @@ package sabr.pieces;
 import sabr.Color;
 import sabr.Coordinates;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Knight extends Piece {
@@ -12,6 +14,21 @@ public class Knight extends Piece {
 
     @Override
     protected Set<CoordinatesShift> getPieceMoves() {
-        return null;
+
+        return new HashSet<>(Arrays.asList(
+                new CoordinatesShift(1, 2),
+                new CoordinatesShift(2, 1),
+
+                new CoordinatesShift(2, -1),
+                new CoordinatesShift(1, -2),
+
+                new CoordinatesShift(-2, -1),
+                new CoordinatesShift(-1, -2),
+
+                new CoordinatesShift(-2 , 1),
+                new CoordinatesShift(-1, 2)
+        )
+
+        );
     }
 }
