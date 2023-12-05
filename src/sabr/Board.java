@@ -16,7 +16,7 @@ public class Board {
         pieces.remove(coordinates);
     }
 
-    public void movePiece(Coordinates from, Coordinates to){
+    public void movePiece(Coordinates from, Coordinates to, Piece piece){
         removePiece(from);
         setPiece(to, piece);
     }
